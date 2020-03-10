@@ -1,0 +1,27 @@
+.main_chat
+  .main_chat__info
+    .main_chat__left
+      .main_chat__one test
+      .main_chat__two Member:masa
+    .main_chat__edit
+      = link_to "#", class: "main_chat__Edit" do
+        Edit
+  .main_chat__list
+    .main_chat__text
+      .main_chat__infomation
+        .main_chat__title masa
+        .main_chat__date 2020/05/16
+      .main_chat__textlog おはよう！
+    .main_chat__text2
+      .main_chat__infomation2
+        .main_chat__title2 masa
+        .main_chat__date2 2021/05/16
+      .main_chat__textlog2 こんにちは！
+  .main_chat__form
+    .main_chat__box
+      .main_chat__message
+        %input{type: "text", class: "main_chat__typemessage", placeholder: "type a message"}
+        %label{class: "main_chat__image"}
+          = icon('fas','image')
+          %input{type: "file", class: "main_chat__image__file"}
+      %input{type: "submit", class: "sumit__btn"}
