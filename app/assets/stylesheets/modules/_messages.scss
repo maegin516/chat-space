@@ -5,13 +5,13 @@
 .wrapper{
   display: flex;
   .side_bar{
-    &__name{
+    &__header{
       background-color:#253141;
       width: 300px;
       height: 100px;
       position: relative;
     }
-      &__logo{
+      &__header__name{
         height: 20px;
         width: 260px;
         position: absolute;
@@ -31,20 +31,20 @@
           margin-left: 5px;
           width: 60px;
         }
-    &__group{
+    .groups{
       background-color: #2f3e51;
       height: calc(100vh - 100px);
     }
-      &__zero{
+      .group{
         height: 91px;
       }
-        &__one{
+        .group__name{
           height: 40px;
           font-size: 15px;
           padding: 20px 0px 5px 20px;
           color: white;
         }
-        &__two{
+        .group__message{
           height: 51px;
           font-size: 11px;
           padding-left: 20px;
