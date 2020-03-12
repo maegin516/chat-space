@@ -1,15 +1,19 @@
 .side_bar
-  .side_bar__header
-    .side_bar__header__name
-      .side_bar__masa masa
-      .side_bar__icon
+  .header
+    %ul.header__lists
+      %h3.header__name
+        = current_user.name
+      %li.list
         = link_to new_group_path do
-          = icon("fa fa-edit", class: "edit")
-        = link_to "#", class: "side_bar__icon side_bar__icon--fa-cog" do
-          = icon("fa fa-cog", class: "side_bar__icon")
-  .groups
-    .group
-      .group__name
-        = group.name
-      .group__message
-        まだメッセージがありません
+          = icon('fa', 'edit', class: 'icon')
+      %li.list
+        = link_to edit_user_path(current_user) do
+          = icon('fa', 'cog', class: 'icon')
+  .group
+    - current_user.groups.each do |group|
+      .groups
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            = group.show_last_message
