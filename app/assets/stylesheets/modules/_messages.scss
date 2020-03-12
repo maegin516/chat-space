@@ -27,32 +27,36 @@
         }
       }
     }
-    .group{
-      background-color: #2f3e51;
-      height: calc(100vh - 100px);
-      padding: 0 20px;
+  .group{
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 20px 20px 0;
+    overflow: scroll;
+  }
+    .groups{
+      box-sizing: border-box;
+      padding: 20px 0 40px;
     }
-      .groups{
-        box-sizing: border-box;
-        padding: 20px 0 40px;
+      &__name{
+        color: #fff;
+        font-size: 15px;
       }
-        &__name{
-          color: #fff;
-          font-size: 15px;
-        }
-        &__message{
-          color: #fff;
-          font-size: 11px;
-          margin-top: 5px;
-        }
+      &__message{
+        color: #fff;
+        font-size: 11px;
+        margin-top: 5px;
+      }
   }
   .main_chat{
-    width: 100%;
+    width: calc(100vw - 300px);
+    float: left;
     &__info{
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 40px;
+      height: 100px;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px #eee;
+      overflow: scroll
     }
       &__left{
         margin-top: 35px;
@@ -82,87 +86,75 @@
           line-height: 40px;
           text-decoration: none;
         }
-    &__list{
-        background-color: #fafafa;
-        height: calc(100vh - 190px);
+    .messages{
+      height: calc(100vh - 190px);
         padding: 46px 40px;
+        background-color: #fafafa;
+        overflow: scroll;
+    .message{
+      height: calc(100vh - 190px);
+      padding: 46px 40px;
+      background-color: #fafafa;
     }
-      &__text{
-        height: 105px;
-        padding-bottom: 40px;
+      .upper-message{
+        height: 100px;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px #eee;
+        overflow: scroll;
       }
-        &__infomation{
+        .upper-message__user-name{
           display: flex;
-          height: 24px;
           margin-bottom: 10px;
         }
-          &__title{
+          .upper-message__date{
             color: #333333;
             font-size: 16px;
             font-weight: bold;
           }
-          &__date{
+          .lower-message{
             color: #999999;
             font-size: 12px;
             margin-left: 10px;
           }
-        &__textlog{
+        .lower-message__content{
           color: #434A54;
           font-size: 14px;
           margin-bottom: 10px;
         }
-        &__text2{
-          height: 105px;
-          padding-bottom: 40px;
-        }
-          &__infomation2{
-            display: flex;
-            height: 24px;
-            margin-bottom: 10px;
-          }
-            &__title2{
-              color: #333333;
-              font-size: 16px;
-              font-weight: bold;
-            }
-            &__date2{
-              color: #999999;
-              font-size: 12px;
-              margin-left: 10px;
-            }
-          &__textlog2{
-            color: #434A54;
-            font-size: 14px;
-            margin-bottom: 10px;
-          }
-    &__form{
+    }
+  }
+    .form{
+      position: fixed;
+      width: 100%;
+      bottom: 0;
       background-color: #d2d2d2;
       height: 90px;
       padding: 20px 40px;
-    }
-      &__box{
+      .box{
         display: flex;
         height: 100%;
       }
-        &__message{
+        .message{
           display: flex;
           width: 100%;
           position: relative;
           border-style: none;
           }
-          &__typemessage{
+          .typemessage{
             height: 50px;
             width: 100%;
             padding: 0 40px 0 10px;
             color: #434a54;
             border-style: none;
           }
-          &__image{
+          .image{
             position: absolute;
             top: 10px;
             right: 10px;
           }
-            &__image__file{
+            .image__file{
               display: none;
             }
         .sumit__btn{
@@ -175,6 +167,7 @@
           cursor: pointer;
         }
   }
+  
 }
 
 
