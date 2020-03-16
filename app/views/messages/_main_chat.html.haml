@@ -1,11 +1,15 @@
-.main_chat
-  .main_chat__info
-    .main_chat__left
-      .main_chat__one test
-      .main_chat__two Member:masa
-    .main_chat__edit
-      = link_to "#", class: "main_chat__Edit" do
-        Edit
+.chat-main__message-list
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group
+        = @group.name
+      %ul.main-header__left-box__member-list
+        Member:
+        %li.main-header__left-box__member-list__member
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
+    .main-header__edit
+      =link_to "Edit",edit_group_path(@group), class: 'right-header__button'
   .messages
     = render @messages
   -# -# .form
@@ -18,11 +22,11 @@
   -#     %input{type: "submit", class: "sumit__btn"}
 
   .form
-    .box
+    .input-box
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'typemessage', placeholder: 'type a message'
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
         .form__mask
-          = f.label :image, class: 'image' do
+          = f.label :image, class: 'input-box__image' do
             = icon('fas', 'image', class: 'icon')
-            = f.file_field :image, class: 'image__file'
-        = f.submit 'Send', class: 'submit__btn'
+            = f.file_field :image, class: 'input-box__image__file'
+          = f.submit 'Send', class: 'submit-btn'
